@@ -2,7 +2,7 @@ aid: coterra-energy
 url: https://raw.githubusercontent.com/api-evangelist/coterra-energy/refs/heads/main/apis.yml
 name: Coterra Energy
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Energy
   - Oil and Gas
@@ -19,7 +19,7 @@ apis:
       - Energy
       - Oil and Gas
       - Exploration
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.coterra.com
     humanURL: https://developer.coterra.com
     properties:
