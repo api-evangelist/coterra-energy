@@ -1,0 +1,25 @@
+generated: '2026-09-19'
+method: searched
+source: www.coterra.com sitemap (page-sitemap.xml) and WordPress pages index (/wp-json/wp/v2/pages) enumerated 2026-09-19; conventional legal paths probed live
+note: >-
+  Harvest only — nothing here decides whether a regime applies. The coterra.com site is a five-page
+  holding site (home, contact-us, owners, legal-notice, safety-handbooks) following the 2026-05-07
+  merger into Devon Energy. Its complete page index carries no accessibility conformance report,
+  subprocessor list, DPA, privacy-request page, transparency report, SBOM, data-residency or AI
+  transparency page; /privacy-policy and /privacy answer 404. The only privacy text on the site is a
+  paragraph inside the Legal Notice. An empty signals map is the measurement.
+probed:
+  - url: https://www.coterra.com/page-sitemap.xml
+    status: 200
+    note: five URLs — /, /contact-us/, /legal-notice/, /owners/, /safety-handbooks/
+  - url: https://www.coterra.com/wp-json/wp/v2/pages?per_page=100
+    status: 200
+    note: five published pages, matching the sitemap
+  - url: https://www.coterra.com/privacy-policy
+    status: 404
+  - url: https://www.coterra.com/privacy
+    status: 404
+  - url: https://www.coterra.com/legal-notice/
+    status: 200
+    note: website terms of use; no subprocessor table, DSR channel or GPC statement
+signals: {}

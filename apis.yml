@@ -2,6 +2,8 @@ aid: coterra-energy
 url: https://raw.githubusercontent.com/api-evangelist/coterra-energy/refs/heads/main/apis.yml
 name: Coterra Energy
 type: Index
+access: 1st-Party
+position: Producing
 deliveryModel:
   model: unknown
   open_source: false
@@ -14,49 +16,135 @@ deliveryModel:
   generated: '2026-08-28'
   method: derived
 accessModel:
-  pricing: paid
-  onboarding: unknown
+  pricing: none
+  onboarding: none
   trial: false
   try_now: false
   public: false
-  label: Paid
-  confidence: medium
+  label: No public API surface — nothing to onboard to
+  confidence: high
+  generated: '2026-09-19'
+  method: probed
   source:
-  - finops
-  generated: '2026-07-22'
-  method: derived
+  - {url: 'https://www.coterra.com/', status: 200, note: 'five-page corporate stub (home, contact, owners, legal notice, safety handbooks) carrying the notice "Coterra completed its merger with Devon Energy on May 7, 2026" (probed 2026-09-19)'}
+  - {url: 'https://developer.coterra.com/', status: 0, note: 'does not resolve in DNS — the previously recorded developer portal never existed'}
+  - {url: 'https://api.coterra.com/', status: 0, note: 'does not resolve in DNS — the previously recorded API base never existed'}
+  - {url: 'https://www.coterra.com/openapi.json', status: 404, note: 'no OpenAPI on the corporate host'}
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/coterra-energy.png
 tags:
   - Energy
   - Oil and Gas
-  - Exploration
+  - Exploration and Production
+  - Natural Gas
+  - Fortune 1000
+  - Merger
+  - Defunct
 description: >-
-  Coterra Energy is a major US corporation and Fortune 1000 company. The Coterra Energy API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Coterra Energy Inc. (formerly Cabot Oil & Gas, combined with Cimarex Energy in October 2021)
+  was a Houston-headquartered independent oil and natural gas exploration and production company
+  with positions in the Permian Basin, the Marcellus Shale and the Anadarko Basin. On May 7, 2026
+  Coterra completed an all-stock merger with Devon Energy; the combined company operates as Devon
+  Energy (NYSE: DVN), Coterra's shares were deregistered (Form 15-12G filed 2026-05-19) and
+  investors.coterra.com now redirects to investors.devonenergy.com. The coterra.com site has been
+  reduced to a five-page holding site for interest owners. Coterra never operated a public
+  developer program or API: owner statements are delivered through EnergyLink and production data
+  through PDS Energy, both third-party platforms. The only programmatic access to Coterra data is
+  the SEC's own EDGAR API, listed here as a clearly labeled third-party government API.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-19'
 specificationVersion: '0.23'
 apis:
-  - aid: coterra-energy:coterra-energy-api
-    name: Coterra Energy API
-    tags:
-      - Energy
-      - Oil and Gas
-      - Exploration
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.coterra.com
-    humanURL: https://developer.coterra.com
-    properties:
-      - url: https://developer.coterra.com/docs
-        type: Documentation
+  - aid: coterra-energy:sec-edgar-filings
+    name: SEC EDGAR Filings (Coterra Energy, CIK 858470)
     description: >-
-      The Coterra Energy API provides access to platform services and data for enterprise integration and automation.
+      Machine-readable filing data for Coterra Energy is available from the U.S. Securities and
+      Exchange Commission, not from the company. The SEC EDGAR submissions API returns the full
+      filing history for CIK 0000858470 (formerly Cabot Oil & Gas Corp until 2021-09-29) as JSON,
+      including the Form 15-12G deregistration filed after the Devon Energy merger. This is a
+      third-party government API listed here because it is the only real programmatic access to
+      this company's data.
+    humanURL: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+    baseURL: https://data.sec.gov
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+    tags:
+      - Filings
+      - SEC EDGAR
+      - Third Party
+    properties:
+      - type: Documentation
+        url: https://www.sec.gov/search-filings/edgar-application-programming-interfaces
+      - type: APIReference
+        url: https://data.sec.gov/submissions/CIK0000858470.json
+    x-evidence:
+      verified: '2026-09-19'
+      method: fetched documentation and called the endpoint
+      documentation: >-
+        The SEC's EDGAR APIs page documents RESTful JSON APIs on data.sec.gov —
+        https://data.sec.gov/submissions/CIK##########.json plus the XBRL companyconcept,
+        companyfacts and frames APIs. No authentication or API key required; a declared
+        User-Agent and a 10-request-per-second ceiling are the stated fair-access terms.
+      endpoint_check: >-
+        GET https://data.sec.gov/submissions/CIK0000858470.json returned HTTP 200 with JSON naming
+        "Coterra Energy Inc.", an empty tickers[] list, the former name "CABOT OIL & GAS CORP"
+        through 2021-09-29, and a Form 15-12G filed 2026-05-19.
 common:
-  - type: DomainSecurity
-    url: security/coterra-energy-domain-security.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/coterra-energy
   - type: Website
     url: https://www.coterra.com
+  - type: Successor
+    url: https://www.devonenergy.com
+  - type: News
+    url: https://www.devonenergy.com/news/2026/Devon-Energy-and-Coterra-Energy-Complete-Merger
+  - type: Contact
+    url: https://www.coterra.com/contact-us/
+  - type: TermsOfService
+    url: https://www.coterra.com/legal-notice/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/coterra-energy
+  - type: Packages
+    url: packages/coterra-energy-packages.yml
+  - type: RegulatoryPosture
+    url: regulatory/coterra-energy-regulatory-posture.yml
+  - type: LLMsTxt
+    url: llms/coterra-energy-llms.txt
+  - type: DomainSecurity
+    url: security/coterra-energy-domain-security.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-19'
+  status: minimal
+  artifacts_added: 4
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Coterra Energy was absorbed into Devon Energy on 2026-05-07 and deregistered its shares
+    (Form 15-12G, 2026-05-19); coterra.com is now a five-page holding site for interest owners
+    whose own WordPress page index lists only home, contact-us, legal-notice, owners and
+    safety-handbooks, investors.coterra.com 301s to investors.devonenergy.com, and the
+    developer.coterra.com and api.coterra.com hosts this profile previously recorded do not
+    resolve in DNS at all.
+  evidence:
+    - url: https://www.coterra.com/
+      status: 200
+    - url: https://www.coterra.com/wp-json/wp/v2/pages?per_page=100
+      status: 200
+    - url: https://developer.coterra.com/
+      status: 0
+    - url: https://api.coterra.com/
+      status: 0
+    - url: https://www.coterra.com/openapi.json
+      status: 404
+    - url: https://www.coterra.com/.well-known/api-catalog
+      status: 403
+    - url: https://investors.coterra.com/
+      status: 301
+    - url: https://api.github.com/orgs/coterra-energy
+      status: 404
+  checked: '2026-09-19'
+x-successor: devon-energy
+x-relationship: merger
+x-acquired: 2026
+x-status: defunct

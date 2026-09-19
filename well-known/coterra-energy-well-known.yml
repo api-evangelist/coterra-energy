@@ -1,0 +1,69 @@
+generated: '2026-09-19'
+method: probed
+source: live GET of every named /.well-known path on every host the record knows (www.coterra.com, coterra.com, developer.coterra.com, api.coterra.com)
+note: >-
+  No document was served. www.coterra.com answers HTTP 403 (a 548-byte edge-policy HTML page) for
+  EVERY /.well-known/* path including the negative control that cannot exist, so the 403s are a
+  blanket edge rule on the /.well-known/ prefix rather than per-document misses; /apis.json and
+  /apis.yml answer the site's ordinary 404 page. developer.coterra.com and api.coterra.com do not
+  resolve in DNS. The bare coterra.com host 301s every path to www.coterra.com. No WellKnown or
+  SecurityTxt pointer is emitted because nothing was served.
+hit_count: 0
+path_echo_control:
+  path: /.well-known/coterra-energy-negative-control-9f2ab7c1.json
+  status: 403
+  result: passed
+hosts:
+  - host: https://www.coterra.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+      - path: /.well-known/openid-configuration
+        status: 403
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+      - path: /.well-known/api-catalog
+        status: 403
+      - path: /.well-known/api-catalog.json
+        status: 403
+      - path: /.well-known/ai-plugin.json
+        status: 403
+      - path: /.well-known/ucp.json
+        status: 403
+      - path: /.well-known/acp.json
+        status: 403
+      - path: /.well-known/aauth-resource.json
+        status: 403
+      - path: /.well-known/apis.json
+        status: 403
+      - path: /apis.json
+        status: 404
+      - path: /apis.yml
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 403
+      - path: /.well-known/agent.json
+        status: 403
+      - path: /security.txt
+        status: 200
+        note: soft-200 — the response body is the site home page (text/html, 32,857 bytes), not a security.txt; treated as a miss
+      - path: /llms.txt
+        status: 200
+        note: soft-200 — the response body is the site home page (text/html, 32,857 bytes), not an llms.txt; treated as a miss
+  - host: https://coterra.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 301
+        note: every path on the bare host 301s to https://www.coterra.com/
+  - host: https://developer.coterra.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        note: NXDOMAIN — host does not resolve
+  - host: https://api.coterra.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 0
+        note: NXDOMAIN — host does not resolve

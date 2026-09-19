@@ -1,0 +1,9 @@
+generated: '2026-09-19'
+method: searched
+source: registry.npmjs.org, pypi.org and api.github.com/orgs probed 2026-09-19; the coterra.com site (five pages) publishes no SDK, CLI or source-code link
+note: >-
+  No first-party client library exists. npm and PyPI return 404 for `coterra` and `coterra-energy`,
+  and no GitHub organization named coterra, coterra-energy, coterraenergy or CoterraEnergy exists.
+  Coterra Energy was an oil and gas operator with no developer program and merged into Devon Energy
+  on 2026-05-07, so no package is expected.
+packages: []
