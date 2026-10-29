@@ -1,4 +1,4 @@
-# Coterra Energy (coterra-energy)
+# Coterra Energy
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,23 +64,67 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Coterra Energy is a major US corporation and Fortune 1000 company. The Coterra Energy API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+> **No longer operating.** This company or product has shut down, been discontinued, or been deprecated. This profile is kept as a historical record and is not maintained or rated.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/coterra-energy/refs/heads/main/apis.yml)
+Coterra Energy Inc. (formerly Cabot Oil & Gas, combined with Cimarex Energy in October 2021) was a Houston-headquartered independent oil and natural gas exploration and production company with positions in the Permian Basin, the Marcellus Shale and the Anadarko Basin. On May 7, 2026 Coterra completed an all-stock merger with Devon Energy; the combined company operates as Devon Energy (NYSE: DVN), Coterra's shares were deregistered (Form 15-12G filed 2026-05-19) and investors.coterra.com now redirects to investors.devonenergy.com. The coterra.com site has been reduced to a five-page holding site for interest owners. Coterra never operated a public developer program or API: owner statements are delivered through EnergyLink and production data through PDS Energy, both third-party platforms. The only programmatic access to Coterra data is the SEC's own EDGAR API, listed here as a clearly labeled third-party government API.
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+**Areas:** Energy · Oil and Gas · Exploration and Production · Natural Gas · Fortune 1000 · Merger · Defunct
 
-## Tags:
+## Coterra Energy on APIs.io (historical record)
 
- - Energy, Oil and Gas, Exploration
+Everything profiled for Coterra Energy is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/coterra-energy/](https://apis.io/providers/coterra-energy/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (1)
 
-- **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+- [SEC EDGAR Filings (Coterra Energy, CIK 858470)](https://apis.io/apis/coterra-energy/sec-edgar-filings/) — Machine-readable filing data for Coterra Energy is available from the U.S. Securities and Exchange Commission, not from the company. The SEC EDGAR…
 
-## Maintainers
+### Published properties
 
-**FN:** Kin Lane
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Email:** kin@apievangelist.com
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Coterra Energy Domain Security](https://apis.io/security/coterra-energy/coterra-energy-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Coterra Energy Plans Pricing](https://apis.io/plans/coterra-energy/coterra-energy-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Coterra Energy Rate Limits](https://apis.io/rate-limits/coterra-energy/coterra-energy-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Coterra Energy Finops](https://apis.io/finops/coterra-energy/coterra-energy-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.coterra.com)
+- [Terms of service](https://www.coterra.com/legal-notice/)
+
+## API Evangelist rating
+
+**Not rated** — this company is recorded as no longer operating, so no score is published. If it is in fact operating, say so on this repository and it will be re-profiled.
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Coterra Energy: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/coterra-energy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
